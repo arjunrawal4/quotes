@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Arjun's Quotes of the Day</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">      <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<style style="text/css">
+body {
+  background-image: url("https://i.ytimg.com/vi/hPCotoawhk0/maxresdefault.jpg");
+  background-position: 4% 4%;
+  background-repeat: repeat;
+}
+</style>
+
+<body>
+
+    <!-- Navigation -->
+
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Quotes for Today!</h1>
+                        <h3>A Site by Arjun Rawal</h3>
+                        <hr class="intro-divider">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+    <ul class="quotes">
+    <% for(var i=quotes.length-1; i>=0; i--)
+    {%>
+    <%if (!/^\s*$/.test(quotes[i].name) && !/^\s*$/.test(quotes[i].quote))  { %>
+      <li class="quote">
+            <span><%= quotes[i].name %> - </span>
+            <span>"<%= quotes[i].quote %>"</span>
+      </li>
+      <% } %>
+    <% } %>
+    </ul>
+    <form action="/quotes" method="POST">
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="quote" name="quote">
+      <button type="submit">Submit</button>
+    </form>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                    <p>Check out our friends at <a href = "http://llamasgodancing.blogspot.com" target = "_blank"> Thanmar's Cheese Blog</a></p>
+                    <p class="copyright text-muted small">Copyright &copy; Arjun Rawal 2017. All Rights Reserved</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>
